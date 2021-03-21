@@ -1,0 +1,190 @@
+ <h1>teste do formulario</h1>
+ 
+ <form action="/form" method="POST">
+        <fieldset>
+          <legend>Informações Básicas</legend>
+          <div class="line">
+            <div>
+              <label for="nome">Nome completo: </label>
+              <input type="text" id="nome" />
+            </div>
+
+            <div>
+              <label for="cpf">CPF: </label>
+              <input
+                type="text"
+                id="cpf"
+                onfocus="retirarFormatacao(this);"
+                onblur="formatarCampoCpf(this);"
+                maxlength="11"
+                placeholder="Apenas números"
+              />
+            </div>
+          </div>
+
+          <div class="line">
+            <div>
+              <label for="nasc">Data de Nascimento: </label>
+              <input type="date" id="nasc" />
+            </div>
+            <div>
+              <label for="cargo">Cargo: </label>
+              <select id="cargo">
+                <option value="assistente_social">Assistente Social</option>
+                <option value="bioquimico">Bioquímico</option>
+                <option value="contador">Contador</option>
+                <option value="enfermeiro">Enfermeiro</option>
+                <option value="enfermeiro_auditor">Enfermeiro Auditor</option>
+                <option value="enfermeiro_obstetra">Enfermeiro Obstetra</option>
+                <option value="enfermeiro_risco">
+                  Enfermeiro Classificador de Risco
+                </option>
+                <option value="farmaceutico">Farmacêutico</option>
+                <option value="fisioterapeuta">Fisioterapeuta</option>
+                <option value="fonoaudiologo">Fonoaudiólogo</option>
+                <option value="nutricionista">Nutricionista</option>
+                <option value="psicologo">Psicólogo</option>
+                <option value="tecnico_farmacia">Técnico de Farmácia</option>
+                <option value="tecnico_laboratorio">
+                  Técnico de Laboratório
+                </option>
+                <option value="tecnico_radiologia">
+                  Técnico de Radiologia
+                </option>
+                <option value="tecnico_enfermagem">
+                  Técnico em Enfermagem
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="line">
+            <div>
+              <label for="email">Email: </label>
+              <input type="email" id="email" />
+            </div>
+            <div>
+              <label for="phone">Telefone: </label>
+              <input
+                type="text"
+                id="phone"
+                onfocus="retirarFormatacao(this);"
+                onblur="formatarCampoTelefone(this);"
+                maxlength="11"
+                placeholder="Apenas números"
+              />
+            </div>
+          </div>
+
+          <div class="line">
+            <div>
+              <label for="cep">CEP: </label>
+              <input type="number" id="cep" placeholder="Apenas números" />
+            </div>
+            <div>
+              <label for="cidade">Cidade: </label>
+              <input type="text" id="cidade" readonly />
+            </div>
+          </div>
+
+          <div class="line">
+            <div>
+              <label for="rua">Rua: </label>
+              <input type="text" id="rua" readonly />
+            </div>
+            <div>
+              <label for="numero">Número: </label>
+              <input type="number" id="numero" />
+            </div>
+          </div>
+
+          <div class="line">
+            <div>
+              <label for="bairro">Bairro: </label>
+              <input type="text" id="bairro" readonly />
+            </div>
+            <div>
+              <label for="complemento">Complemento:</label>
+              <input type="text" id="complemento" />
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="lastFieldset">
+          <legend>Análise Curricular</legend>
+          <div class="line">
+            <input type="checkbox" id="requisitos_minimos" />
+            <label for="requisitos_minimos"
+              >Possuo todos os requisitos mínimos para submissão do
+              <a href="https://unimontes.br/editais/" target="_blank">edital</a
+              >.</label
+            >
+          </div>
+          <div class="line">
+            <div>
+              <label for="form_academica">Formação Acadêmica: </label>
+              <select
+                name="form_academica"
+                id="form_academica"
+                onchange="calcularFormacaoPontos(document.getElementById('pontos_form'))"
+              >
+                <option value="sem_pos_graduacao">Sem Pós-Graduação</option>
+                <option value="pos_graduacao">Pós-Graduação Latu Sensu</option>
+                <option value="mestrado">
+                  Pós-Graduação Stricto Sensu (Mestrado)
+                </option>
+                <option value="doutorado">
+                  Pós-Graduação Stricto Sensu (Doutorado)
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="pontos_form">Pontuação: </label>
+              <input type="number" id="pontos_form" value="0" readonly />
+            </div>
+          </div>
+
+          <div class="line">
+            <div>
+              <label for="tempo_servico"
+                >Tempo de Serviço na Área da Saúde (meses):
+              </label>
+              <input
+                type="number"
+                id="tempo_servico"
+                onblur="calcularPontos(tempo_servicoInput, document.getElementById('pontos_tempo'), 25, experienciaInput)"
+                placeholder="Máximo de 25 meses"
+              />
+            </div>
+
+            <div>
+              <label for="pontos_tempo">Pontuação: </label>
+              <input type="number" id="pontos_tempo" readonly />
+            </div>
+          </div>
+
+          <div class="line">
+            <div>
+              <label for="experiencia"
+                >Experiência Profissional na Área Hospitalar (meses):
+              </label>
+              <input
+                type="number"
+                id="experiencia"
+                onblur="calcularPontos(experienciaInput, document.getElementById('pontos_exp'), 45)"
+                placeholder="Máximo de 45 meses"
+              />
+            </div>
+
+            <div>
+              <label for="pontos_exp">Pontuação: </label>
+              <input type="number" id="pontos_exp" readonly />
+            </div>
+          </div>
+        </fieldset>
+        <div class="full-line">
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+
+
+  
