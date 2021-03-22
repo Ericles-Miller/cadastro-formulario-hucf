@@ -14,7 +14,7 @@ $rua;
 $numero;          
 $bairro;          
 $complemmento;    
-$analise_curricular;
+#$analise_curricular;
 $formacao_academica; 
 $tempo_servico;
 $pontuacao;       
@@ -29,7 +29,7 @@ $conn = getConnection();
          $nome            = $_POST["f_nome"];
          $cpf             = $_POST["f_cpf"];
          $cargo           = $_POST["f_cargo"];
-         $id_cargo_candidato = $_POST["f_cargo_candidato"]; #verificar
+         #$id_cargo_candidato = $_POST["f_cargo_candidato"]; #verificar
          $email           = $_POST["f_email"];
          $telefone        = $_POST["f_telefone"];
          $cep             = $_POST["f_cep"];
@@ -38,40 +38,30 @@ $conn = getConnection();
          $numero          = $_POST["f_numero"];
          $bairro          = $_POST["f_bairro"];
          $complemmento    = $_POST["f_complemento"];
-         $analise_curricular = $_POST["f_analise_curricular"];
+         #$analise_curricular = $_POST["f_analise_curricular"];
          $cargo_formacao = $_POST["f_formacao_academica"];
          $tempo_servico  = $_POST["f_tempo_servico"];
          $pontuacao_academica = $_POST["f_pontuacao_academica"];
          $experiencia_profissional_area = $_POST["f_experiencia_profissional"];
-    
-        
-         
-         echo '<br>rua'.$rua;   
-        echo '<br>cargo:'.$data_nascimento;
-        echo '<br> cpf:' .$cpf;
-        echo '<br> telefone' .$telefone;
 
-
-
-
-        $sql = 'insert into dados_candidato(nome,Data_nascimento,email,cep,rua,bairro,cpf,cargo,telefone,cidade,numero,complemento,formacao_academica,tempo_servico_area_saude,experiencia_profiss_area_hospitalar,pontuacao_formacao_academica) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+        $sql = 'insert into dados_candidato(Data_nascimento,nome,email,rua,bairro,cpf,cargo,telefone,cidade,numero,complemento,formacao_academica,tempo_servico_area_saude,experiencia_profiss_area_hospitalar,pontuacao_formacao_academica,cep) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(1,$nome);
-        $stmt->bindValue(2,$data_nascimento);
+        $stmt->bindValue(1,$data_nascimento);
+        $stmt->bindValue(2,$nome);        
         $stmt->bindValue(3,$email);
-        $stmt->bindValue(4,$cep);
-        $stmt->bindValue(5,$rua);
-        $stmt->bindValue(6,$bairro);
-        $stmt->bindValue(7,$cpf);
-        $stmt->bindValue(8,$cargo);
-        $stmt->bindValue(9,$telefone);
-        $stmt->bindValue(10,$cidade);
-        $stmt->bindValue(11,$numero);
-        $stmt->bindValue(12,$complemmento);
-        $stmt->bindValue(13,$cargo_formacao);
-        $stmt->bindValue(14,$tempo_servico);
-        $stmt->bindValue(15,$experiencia_profissional_area);
-        $stmt->bindValue(16,$pontuacao_academica);
+        $stmt->bindValue(4,$rua);
+        $stmt->bindValue(5,$bairro);
+        $stmt->bindValue(6,$cpf);
+        $stmt->bindValue(7,$cargo);
+        $stmt->bindValue(8,$telefone);
+        $stmt->bindValue(9,$cidade);
+        $stmt->bindValue(10,$numero);
+        $stmt->bindValue(11,$complemmento);
+        $stmt->bindValue(12,$cargo_formacao);
+        $stmt->bindValue(13,$tempo_servico);
+        $stmt->bindValue(14,$experiencia_profissional_area);
+        $stmt->bindValue(15,$pontuacao_academica);
+        $stmt->bindValue(16,$cep);
         if ($stmt->execute())
         {
             echo 'Dados salvos com sucesso!';

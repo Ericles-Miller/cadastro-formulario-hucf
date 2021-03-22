@@ -77,7 +77,7 @@
           <div class="line">
             <div>
               <label for="email">Email: </label>
-              <input type="email" name= "F_email" id="email" />
+              <input type="email" name= "f_email" id="email" />
             </div>
             <div>
               <label for="phone">Telefone: </label>
@@ -132,14 +132,13 @@
             <input type="checkbox" name="f_analise_curricular" id="requisitos_minimos" />
             <label for="requisitos_minimos"
               >Possuo todos os requisitos mínimos para submissão do
-              <a href="https://unimontes.br/editais/" target="_blank">edital</a
-              >.</label
-            >
+              <a href="https://unimontes.br/editais/" target="_blank">edital</a>
+            </label>
           </div>
           <div class="line">
             <div>
               <label for="form_academica">Formação Acadêmica: </label>
-              <select id="form_academica" name="f_formacao_academica" onchange="calcularFormacaoPontos(document.getElementById('pontos_form'))" >
+              <select id="form_academica" name="f_formacao_academica" onchange="calcularFormacaoPontos(document.getElementById('pontos_form'))">
                 <option value="sem_pos_graduacao">Sem Pós-Graduação</option>
                 <option value="pos-graduacao">Pós-Graduação Latu Sensu</option>
                 <option value="mestrado">
@@ -166,8 +165,7 @@
                 id="tempo_servico"
                 name="f_tempo_servico"
                 onblur="calcularPontos(tempo_servicoInput, document.getElementById('pontos_tempo'), 25, experienciaInput)"
-                placeholder="Máximo de 25 meses"
-              />
+                placeholder="Máximo de 25 meses"/>
             </div>
 
             <div>
@@ -178,16 +176,13 @@
 
           <div class="line">
             <div>
-              <label for="experiencia"
-                >Experiência Profissional na Área Hospitalar (meses):
-              </label>
+              <label for="experiencia">Experiência Profissional na Área Hospitalar (meses):</label>
               <input
                 type="number"
                 id="experiencia"
                 name="f_experiencia_profissional"
                 onblur="calcularPontos(experienciaInput, document.getElementById('pontos_exp'), 45)"
-                placeholder="Máximo de 45 meses"
-              />
+                placeholder="Máximo de 45 meses"/>
             </div>
 
             <div>
@@ -202,7 +197,7 @@
       </form>
     </div>
   </body>
-
+  
   <!-- <script src="sendForm.js"></script> -->
   <script src="formatting.js"></script>
   <script src="search-cep.js"></script>
