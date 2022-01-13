@@ -139,7 +139,7 @@
             <div>
               <label for="form_academica">Formação Acadêmica: </label>
               <select id="form_academica" name="f_formacao_academica" onchange="calcularFormacaoPontos(document.getElementById('pontos_form'))">
-                <option value="sem_pos_graduacao">Sem Pós-Graduação</option>
+                <option value="sem_pos_graduacao">Sem Pós-Graduação</option>  
                 <option value="pos-graduacao">Pós-Graduação Latu Sensu</option>
                 <option value="mestrado">
                   Pós-Graduação Stricto Sensu (Mestrado)
