@@ -5,7 +5,7 @@ $conn = getConnection();
 
 function getConnection(){
     # conexao com o banco de dados
-    $dsn = 'mysql:host=10.10.1.114; dbname=cadastro_forms';
+    $dsn = 'mysql:host=addrres_database; dbname=nome_database'; #adicione suas configs de banco aqui 
     $user = 'root';
     $pass = 'adlo895020';//acho que nao tem password
 
@@ -18,4 +18,4 @@ function getConnection(){
 
 }
 
-?>
+?>  

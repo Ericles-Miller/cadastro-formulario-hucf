@@ -23,7 +23,7 @@
        $mensagem[$flag]="Informe o seu nome";
        $flag++;
      }
-   
+    
    // verificar se tem dados em email
      if($_POST['email']!=""){
        $email=strip_tags($_POST['email']);

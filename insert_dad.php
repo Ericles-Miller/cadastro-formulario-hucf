@@ -51,7 +51,7 @@ $conn = getConnection();
         $stmt->bindValue(3,$email);
         $stmt->bindValue(4,$rua);
         $stmt->bindValue(5,$bairro);
-        $stmt->bindValue(6,$cpf);
+        $stmt->bindValue(6,$cpf); 
         $stmt->bindValue(7,$cargo);
         $stmt->bindValue(8,$telefone);
         $stmt->bindValue(9,$cidade);

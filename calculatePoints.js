@@ -16,7 +16,7 @@ function calcularFormacaoPontos(targetInput) {
 
   if (formacao_academicaInput.value === "pos-graduacao") 
     pontos_formacao = 20;
-  else if (formacao_academicaInput.value === "mestrado") 
+  else if (formacao_academicaInput.value === "mestrado")  
     pontos_formacao = 25;
   else if (formacao_academicaInput.value === "doutorado") 
     pontos_formacao = 30;
