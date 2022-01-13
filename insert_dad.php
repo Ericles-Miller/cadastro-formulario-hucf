@@ -26,24 +26,24 @@ $id_endereco;
 $conn = getConnection();
 
         $data_nascimento = $_POST["f_data_nascimento"];
-         $nome            = $_POST["f_nome"];
-         $cpf             = $_POST["f_cpf"];
-         $cargo           = $_POST["f_cargo"];
-         #$id_cargo_candidato = $_POST["f_cargo_candidato"]; #verificar
-         $email           = $_POST["f_email"];
-         $telefone        = $_POST["f_telefone"];
-         $cep             = $_POST["f_cep"];
-         $cidade          = $_POST["f_cidade"];
-         $rua             = $_POST["f_rua"];
-         $numero          = $_POST["f_numero"];
-         $bairro          = $_POST["f_bairro"];
-         $complemmento    = $_POST["f_complemento"];
-         #$analise_curricular = $_POST["f_analise_curricular"];
-         $cargo_formacao = $_POST["f_formacao_academica"];
-         $tempo_servico  = $_POST["f_tempo_servico"];
-         $pontuacao_academica = $_POST["f_pontuacao_academica"];
-         $experiencia_profissional_area = $_POST["f_experiencia_profissional"];
-
+        $nome            = $_POST["f_nome"];
+        $cpf             = $_POST["f_cpf"];
+        $cargo           = $_POST["f_cargo"];
+        #$id_cargo_candidato = $_POST["f_cargo_candidato"]; #verificar
+        $email           = $_POST["f_email"];
+        $telefone        = $_POST["f_telefone"];
+        $cep             = $_POST["f_cep"];
+        $cidade          = $_POST["f_cidade"];
+        $rua             = $_POST["f_rua"];
+        $numero          = $_POST["f_numero"];
+        $bairro          = $_POST["f_bairro"];
+        $complemmento    = $_POST["f_complemento"];
+        #$analise_curricular = $_POST["f_analise_curricular"];
+        $cargo_formacao = $_POST["f_formacao_academica"];
+        $tempo_servico  = $_POST["f_tempo_servico"];
+        $pontuacao_academica = $_POST["f_pontuacao_academica"];
+        $experiencia_profissional_area = $_POST["f_experiencia_profissional"];
+        
         $sql = 'insert into dados_candidato(Data_nascimento,nome,email,rua,bairro,cpf,cargo,telefone,cidade,numero,complemento,formacao_academica,tempo_servico_area_saude,experiencia_profiss_area_hospitalar,pontuacao_formacao_academica,cep) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1,$data_nascimento);
