@@ -5,9 +5,9 @@ $conn = getConnection();
 
 function getConnection(){
     # conexao com o banco de dados
-    $dsn = 'mysql:host=addrres_database; dbname=nome_database'; #adicione suas configs de banco aqui 
-    $user = 'root';
-    $pass = 'adlo895020';//acho que nao tem password
+    $dsn = ''; #adicione suas configs de banco aqui 
+    $user = '';
+    $pass = '';
 
     try {
         $pdo = new PDO( $dsn, $user, $pass);
